@@ -1,45 +1,74 @@
 # Ingliz Tili Kursi CRM 🎓
 
-O'quvchilarni boshqarish uchun to'liq CRM tizimi. **FastAPI + SQLite** asosida qurilgan.
+O'quv markazlari va ingliz tili kurslari uchun to'liq CRM tizimi.
 
-## Ishga tushirish
+- **Backend**: FastAPI + SQLite / SQLAlchemy
+- **Frontend**: React + Vite + TailwindCSS + TanStack Query
 
-```bash
-# 1. Paketlarni o'rnatish
-pip install -r requirements.txt
+---
 
-# 2. Serverni ishga tushirish
-uvicorn main:app --reload
-```
-
-## API hujjati
-
-Server ishga tushgach, quyidagi manzillarda API hujjatini ko'ring:
-
-- **Swagger UI**: http://localhost:8000/docs
-- **ReDoc**: http://localhost:8000/redoc
-
-## Funksiyalar
-
-| Modul | Endpointlar |
-|-------|------------|
-| O'quvchilar | Qo'shish, tahrirlash, o'chirish, qidirish |
-| Guruhlar | CRUD, guruh o'quvchilari ro'yxati |
-| Yozilish | Guruhga qo'shish/chiqarish, sig'im tekshiruvi |
-| Davomat | Belgilash, guruh/o'quvchi hisoboti, % ko'rsatkich |
-| To'lovlar | Kiritish, qarzdorlar ro'yxati |
-| Baholar | Kiritish, o'rtacha ball hisoboti |
-| Jadval | Dars kunlari va vaqtlari |
-| Hisobotlar | Umumiy statistika, oylik daromad, to'liq o'quvchi hisoboti |
-
-## Loyiha tuzilmasi
+## 📁 Loyiha tuzilmasi
 
 ```
 CRM/
-├── main.py          # FastAPI ilovasi
-├── database.py      # SQLite/SQLAlchemy sozlamalari
-├── requirements.txt
-├── models/          # SQLAlchemy ORM modellari
-├── schemas/         # Pydantic validatsiya schemalar
-└── routers/         # API endpointlar
+├── backend/                  # FastAPI API server
+│   ├── models/               # SQLAlchemy modellari
+│   ├── routers/              # API yo'nalishlari (endpoints)
+│   ├── schemas/              # Pydantic schemalar
+│   ├── database.py           # DB ulanish sozlamalari
+│   ├── main.py               # Asosiy dastur nuqtasi
+│   ├── requirements.txt      # Python kutubxonalari
+│   └── README.md
+│
+├── frontend/                 # React frontend ilovasi
+│   ├── src/                  # Komponentlar, sahifalar va hooklar
+│   ├── public/
+│   ├── package.json
+│   ├── vite.config.js
+│   └── README.md
+│
+├── .gitignore
+└── README.md
 ```
+
+---
+
+## 🚀 Ishga tushirish
+
+### 1. Backend
+
+```bash
+cd backend
+python -m venv venv
+# Windows:
+.\venv\Scripts\activate
+# Linux/Mac:
+source venv/bin/activate
+
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
+API hujjati:
+- **Swagger UI**: [http://localhost:8000/docs](http://localhost:8000/docs)
+- **ReDoc**: [http://localhost:8000/redoc](http://localhost:8000/redoc)
+
+### 2. Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+Brauzerda: [http://localhost:5173](http://localhost:5173)
+
+---
+
+## ✨ Funksiyalar
+
+- **O'quvchilar**: Qo'shish, tahrirlash, o'chirish, qidirish
+- **Guruhlar**: CRUD, guruh o'quvchilari ro'yxati
+- **Dars jadvali**: Dars kunlari va soatlari
+- **Davomat**: Davomatni belgilash, hisobotlar
+- **To'lovlar**: To'lovlarni kiritish, qarzdorlar ro'yxati
+- **Baholar**: Baholash va o'rtacha ball tahlili
+- **Hisobotlar**: Umumiy statistika va oylik daromad hisoboti

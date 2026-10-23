@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: rgb(249 250 251);
+    color: rgb(17 24 39);
+  }
+}
+
+@layer components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: background-color 0.15s;
+    cursor: pointer;
+  }
+  .btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .btn-primary {
+    background-color: rgb(37 99 235);
+    color: white;
+  }
+  .btn-primary:hover:not(:disabled) {
+    background-color: rgb(29 78 216);
+  }
+  .btn-secondary {
+    background-color: white;
+    color: rgb(55 65 81);
+    border: 1px solid rgb(209 213 219);
+  }
+  .btn-secondary:hover:not(:disabled) {
+    background-color: rgb(249 250 251);
+  }
+  .btn-danger {
+    background-color: rgb(220 38 38);
+    color: white;
+  }
+  .btn-danger:hover:not(:disabled) {
+    background-color: rgb(185 28 28);
+  }
+  .btn-success {
+    background-color: rgb(22 163 74);
+    color: white;
+  }
+  .btn-success:hover:not(:disabled) {
+    background-color: rgb(21 128 61);
+  }
+  .input {
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid rgb(209 213 219);
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    outline: none;
+  }
+  .input:focus {
+    ring: 2px solid rgb(59 130 246);
+    border-color: transparent;
+    outline: 2px solid rgb(59 130 246);
+    outline-offset: 0;
+  }
+  .label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgb(55 65 81);
+    margin-bottom: 0.25rem;
+  }
+  .card {
+    background-color: white;
+    border-radius: 0.75rem;
+    border: 1px solid rgb(229 231 235);
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  }
+  .table-th {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgb(107 114 128);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .table-td {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    color: rgb(55 65 81);
+  }
+}
